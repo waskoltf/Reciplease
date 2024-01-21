@@ -16,6 +16,9 @@
 		EA49220D2B5C3BB100B774A8 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49220C2B5C3BB100B774A8 /* RecipleaseTests.swift */; };
 		EA4922172B5C3BB100B774A8 /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4922162B5C3BB100B774A8 /* RecipleaseUITests.swift */; };
 		EA4922192B5C3BB100B774A8 /* RecipleaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4922182B5C3BB100B774A8 /* RecipleaseUITestsLaunchTests.swift */; };
+		EA4922262B5C413700B774A8 /* MainViez.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4922252B5C413700B774A8 /* MainViez.swift */; };
+		EA4922282B5C41F800B774A8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4922272B5C41F800B774A8 /* SearchView.swift */; };
+		EA49222A2B5C420C00B774A8 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4922292B5C420C00B774A8 /* FavoriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		EA4922122B5C3BB100B774A8 /* RecipleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4922162B5C3BB100B774A8 /* RecipleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITests.swift; sourceTree = "<group>"; };
 		EA4922182B5C3BB100B774A8 /* RecipleaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EA4922252B5C413700B774A8 /* MainViez.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViez.swift; sourceTree = "<group>"; };
+		EA4922272B5C41F800B774A8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		EA4922292B5C420C00B774A8 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,9 @@
 				EA4921FF2B5C3BB100B774A8 /* Persistence.swift */,
 				EA4922012B5C3BB100B774A8 /* Reciplease.xcdatamodeld */,
 				EA4921FC2B5C3BB100B774A8 /* Preview Content */,
+				EA4922252B5C413700B774A8 /* MainViez.swift */,
+				EA4922272B5C41F800B774A8 /* SearchView.swift */,
+				EA4922292B5C420C00B774A8 /* FavoriteView.swift */,
 			);
 			path = Reciplease;
 			sourceTree = "<group>";
@@ -265,7 +274,10 @@
 			files = (
 				EA4922032B5C3BB100B774A8 /* Reciplease.xcdatamodeld in Sources */,
 				EA4922002B5C3BB100B774A8 /* Persistence.swift in Sources */,
+				EA49222A2B5C420C00B774A8 /* FavoriteView.swift in Sources */,
 				EA4921F92B5C3BB000B774A8 /* ContentView.swift in Sources */,
+				EA4922262B5C413700B774A8 /* MainViez.swift in Sources */,
+				EA4922282B5C41F800B774A8 /* SearchView.swift in Sources */,
 				EA4921F72B5C3BB000B774A8 /* RecipleaseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

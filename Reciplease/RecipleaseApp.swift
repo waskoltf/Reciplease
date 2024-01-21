@@ -13,6 +13,7 @@ struct RecipleaseApp: App {
 
     var body: some Scene {
         WindowGroup {
+//            MainViez()
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
