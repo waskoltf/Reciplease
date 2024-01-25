@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainViez: View {
+struct MainView: View {
     
     init() {
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
@@ -25,7 +25,7 @@ struct MainViez: View {
 
                       SearchView()
                           .tabItem {
-                              Label("New", systemImage: "dollarsign.circle")
+                              Label("Search", systemImage: "magnifyingglass.circle")
                                   .foregroundStyle(.gray)
                                  
                           }
@@ -38,7 +38,7 @@ struct MainViez: View {
                       
                       FavoriteView()
                           .tabItem {
-                              Label("Transactions", systemImage: "list.dash")
+                              Label("Favorites", systemImage: "star")
                                   .foregroundStyle(.gray)
                           }
                           .toolbar(.visible, for: .tabBar)
@@ -48,7 +48,8 @@ struct MainViez: View {
                       
                   }
         .accentColor(Color.pink)
-        .navigationTitle(selection == 0 ? "Reciplease" : (selection == 1 ? "Favorites" : ""))
+//        .navigationTitle(selection == 0 ? "Reciplease" : (selection == 1 ? "Favorites" : ""))
+        .navigationTitle(selection == 0 ? "Reciplease" : "")
                    .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .tabBar)
         .toolbarColorScheme(.dark, for: .tabBar)
@@ -58,5 +59,5 @@ struct MainViez: View {
 
 
 #Preview {
-    MainViez()
+    MainView()
 }

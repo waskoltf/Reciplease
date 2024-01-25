@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA03B58F2B629CDC008BF435 /* RecipeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA03B58D2B629CDC008BF435 /* RecipeModel.xcdatamodeld */; };
+		EA03B5912B629F4E008BF435 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03B5902B629F4E008BF435 /* PersistenceController.swift */; };
+		EA14E2AC2B602D8000B4F9E5 /* DetailsRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14E2AB2B602D8000B4F9E5 /* DetailsRecipeView.swift */; };
 		EA4921F72B5C3BB000B774A8 /* RecipleaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4921F62B5C3BB000B774A8 /* RecipleaseApp.swift */; };
-		EA4921F92B5C3BB000B774A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4921F82B5C3BB000B774A8 /* ContentView.swift */; };
 		EA4921FB2B5C3BB100B774A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4921FA2B5C3BB100B774A8 /* Assets.xcassets */; };
 		EA4921FE2B5C3BB100B774A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4921FD2B5C3BB100B774A8 /* Preview Assets.xcassets */; };
-		EA4922002B5C3BB100B774A8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4921FF2B5C3BB100B774A8 /* Persistence.swift */; };
-		EA4922032B5C3BB100B774A8 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA4922012B5C3BB100B774A8 /* Reciplease.xcdatamodeld */; };
 		EA49220D2B5C3BB100B774A8 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49220C2B5C3BB100B774A8 /* RecipleaseTests.swift */; };
 		EA4922172B5C3BB100B774A8 /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4922162B5C3BB100B774A8 /* RecipleaseUITests.swift */; };
 		EA4922192B5C3BB100B774A8 /* RecipleaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4922182B5C3BB100B774A8 /* RecipleaseUITestsLaunchTests.swift */; };
-		EA4922262B5C413700B774A8 /* MainViez.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4922252B5C413700B774A8 /* MainViez.swift */; };
+		EA4922262B5C413700B774A8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4922252B5C413700B774A8 /* MainView.swift */; };
 		EA4922282B5C41F800B774A8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4922272B5C41F800B774A8 /* SearchView.swift */; };
 		EA49222A2B5C420C00B774A8 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4922292B5C420C00B774A8 /* FavoriteView.swift */; };
+		EA7E82562B5E838A00463BC6 /* SearchRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E82542B5E838A00463BC6 /* SearchRecipe.swift */; };
+		EA7E825A2B5E83EA00463BC6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EA7E82592B5E83EA00463BC6 /* Alamofire */; };
+		EA7E825B2B5EA5A200463BC6 /* SearchRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E82542B5E838A00463BC6 /* SearchRecipe.swift */; };
+		EA7E825C2B5EA5A500463BC6 /* SearchRecipeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E82552B5E838A00463BC6 /* SearchRecipeDetails.swift */; };
+		EA7E825E2B5EB4C200463BC6 /* ListRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E825D2B5EB4C200463BC6 /* ListRecipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,21 +44,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA03B58E2B629CDC008BF435 /* RecipeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipeModel.xcdatamodel; sourceTree = "<group>"; };
+		EA03B5902B629F4E008BF435 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		EA14E2AB2B602D8000B4F9E5 /* DetailsRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRecipeView.swift; sourceTree = "<group>"; };
 		EA4921F32B5C3BB000B774A8 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4921F62B5C3BB000B774A8 /* RecipleaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseApp.swift; sourceTree = "<group>"; };
-		EA4921F82B5C3BB000B774A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EA4921FA2B5C3BB100B774A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA4921FD2B5C3BB100B774A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EA4921FF2B5C3BB100B774A8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		EA4922022B5C3BB100B774A8 /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
 		EA4922082B5C3BB100B774A8 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA49220C2B5C3BB100B774A8 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
 		EA4922122B5C3BB100B774A8 /* RecipleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4922162B5C3BB100B774A8 /* RecipleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITests.swift; sourceTree = "<group>"; };
 		EA4922182B5C3BB100B774A8 /* RecipleaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EA4922252B5C413700B774A8 /* MainViez.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViez.swift; sourceTree = "<group>"; };
+		EA4922252B5C413700B774A8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EA4922272B5C41F800B774A8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		EA4922292B5C420C00B774A8 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		EA7E82542B5E838A00463BC6 /* SearchRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRecipe.swift; sourceTree = "<group>"; };
+		EA7E82552B5E838A00463BC6 /* SearchRecipeDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRecipeDetails.swift; sourceTree = "<group>"; };
+		EA7E825D2B5EB4C200463BC6 /* ListRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA7E825A2B5E83EA00463BC6 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +90,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA14E2AA2B602D5600B4F9E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA4922252B5C413700B774A8 /* MainView.swift */,
+				EA4922272B5C41F800B774A8 /* SearchView.swift */,
+				EA4922292B5C420C00B774A8 /* FavoriteView.swift */,
+				EA7E825D2B5EB4C200463BC6 /* ListRecipe.swift */,
+				EA14E2AB2B602D8000B4F9E5 /* DetailsRecipeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EA4921EA2B5C3BB000B774A8 = {
 			isa = PBXGroup;
 			children = (
@@ -105,14 +126,12 @@
 			isa = PBXGroup;
 			children = (
 				EA4921F62B5C3BB000B774A8 /* RecipleaseApp.swift */,
-				EA4921F82B5C3BB000B774A8 /* ContentView.swift */,
 				EA4921FA2B5C3BB100B774A8 /* Assets.xcassets */,
-				EA4921FF2B5C3BB100B774A8 /* Persistence.swift */,
-				EA4922012B5C3BB100B774A8 /* Reciplease.xcdatamodeld */,
 				EA4921FC2B5C3BB100B774A8 /* Preview Content */,
-				EA4922252B5C413700B774A8 /* MainViez.swift */,
-				EA4922272B5C41F800B774A8 /* SearchView.swift */,
-				EA4922292B5C420C00B774A8 /* FavoriteView.swift */,
+				EA7E82532B5E838A00463BC6 /* ServiceAPI */,
+				EA14E2AA2B602D5600B4F9E5 /* View */,
+				EA03B58D2B629CDC008BF435 /* RecipeModel.xcdatamodeld */,
+				EA03B5902B629F4E008BF435 /* PersistenceController.swift */,
 			);
 			path = Reciplease;
 			sourceTree = "<group>";
@@ -142,6 +161,16 @@
 			path = RecipleaseUITests;
 			sourceTree = "<group>";
 		};
+		EA7E82532B5E838A00463BC6 /* ServiceAPI */ = {
+			isa = PBXGroup;
+			children = (
+				EA7E82542B5E838A00463BC6 /* SearchRecipe.swift */,
+				EA7E82552B5E838A00463BC6 /* SearchRecipeDetails.swift */,
+			);
+			name = ServiceAPI;
+			path = Reciplease/ServiceAPI;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,6 +187,9 @@
 			dependencies = (
 			);
 			name = Reciplease;
+			packageProductDependencies = (
+				EA7E82592B5E83EA00463BC6 /* Alamofire */,
+			);
 			productName = Reciplease;
 			productReference = EA4921F32B5C3BB000B774A8 /* Reciplease.app */;
 			productType = "com.apple.product-type.application";
@@ -230,6 +262,9 @@
 				Base,
 			);
 			mainGroup = EA4921EA2B5C3BB000B774A8;
+			packageReferences = (
+				EA7E82582B5E83EA00463BC6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = EA4921F42B5C3BB000B774A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -272,13 +307,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA4922032B5C3BB100B774A8 /* Reciplease.xcdatamodeld in Sources */,
-				EA4922002B5C3BB100B774A8 /* Persistence.swift in Sources */,
+				EA7E825E2B5EB4C200463BC6 /* ListRecipe.swift in Sources */,
 				EA49222A2B5C420C00B774A8 /* FavoriteView.swift in Sources */,
-				EA4921F92B5C3BB000B774A8 /* ContentView.swift in Sources */,
-				EA4922262B5C413700B774A8 /* MainViez.swift in Sources */,
+				EA03B58F2B629CDC008BF435 /* RecipeModel.xcdatamodeld in Sources */,
+				EA4922262B5C413700B774A8 /* MainView.swift in Sources */,
+				EA14E2AC2B602D8000B4F9E5 /* DetailsRecipeView.swift in Sources */,
 				EA4922282B5C41F800B774A8 /* SearchView.swift in Sources */,
+				EA7E825B2B5EA5A200463BC6 /* SearchRecipe.swift in Sources */,
+				EA7E825C2B5EA5A500463BC6 /* SearchRecipeDetails.swift in Sources */,
 				EA4921F72B5C3BB000B774A8 /* RecipleaseApp.swift in Sources */,
+				EA03B5912B629F4E008BF435 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA7E82562B5E838A00463BC6 /* SearchRecipe.swift in Sources */,
 				EA4922172B5C3BB100B774A8 /* RecipleaseUITests.swift in Sources */,
 				EA4922192B5C3BB100B774A8 /* RecipleaseUITestsLaunchTests.swift in Sources */,
 			);
@@ -609,14 +648,33 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		EA7E82582B5E83EA00463BC6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA7E82592B5E83EA00463BC6 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA7E82582B5E83EA00463BC6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
-		EA4922012B5C3BB100B774A8 /* Reciplease.xcdatamodeld */ = {
+		EA03B58D2B629CDC008BF435 /* RecipeModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EA4922022B5C3BB100B774A8 /* Reciplease.xcdatamodel */,
+				EA03B58E2B629CDC008BF435 /* RecipeModel.xcdatamodel */,
 			);
-			currentVersion = EA4922022B5C3BB100B774A8 /* Reciplease.xcdatamodel */;
-			path = Reciplease.xcdatamodeld;
+			currentVersion = EA03B58E2B629CDC008BF435 /* RecipeModel.xcdatamodel */;
+			path = RecipeModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
