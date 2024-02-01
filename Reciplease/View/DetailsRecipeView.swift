@@ -11,7 +11,7 @@ import CoreData
 struct DetailsRecipeView: View {
     @Environment(\.managedObjectContext) private var viewContext
     var recipe: Recipe
-    @State private var isFavorite: Bool = false // Ajout de
+    @State private var isFavorite: Bool = false 
     
     
     var body: some View {

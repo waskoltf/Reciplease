@@ -19,7 +19,7 @@ class SearchRecipe: ObservableObject {
             "q": query,
             "app_id": "05754b8c",
             "app_key": apiKey,
-            "type": "public" // Add any required parameters here
+            "type": "public" 
         ]
 
 
@@ -58,14 +58,14 @@ struct Recipe: Identifiable, Decodable {
     let image: String
     let ingredients: [Ingredient]
     let url: String
-    let totalTime: Double  // Update this line
+    let totalTime: Double
 
     private enum CodingKeys: String, CodingKey {
         case label
         case image
         case ingredients
         case url
-        case totalTime = "totalTime"  // Add this line
+        case totalTime = "totalTime"
     }
 }
 
@@ -81,37 +81,5 @@ struct Links: Decodable {
 struct Next: Decodable {
     let href: String?
 }
-
-
-//struct Recipe: Identifiable, Decodable {
-//    var id: UUID { UUID() }
-//    var uri: String
-//    var label: String
-//    var image : String
-//    var time: String?
-////    var ingredients: [String]
-//    var foodId: String?
-//    
-//    
-////    let dishType : [String]
-//  
-//    // Ajoutez d'autres propriétés de recette que vous souhaitez afficher
-//}
-//
-//struct EdamamResponse: Decodable {
-//    var hits: [Hit]
-//    
-//
-//    private enum CodingKeys: String, CodingKey {
-//        case hits = "hits"
-//    }
-//}
-//
-//
-//
-//struct Hit: Decodable {
-//    var recipe: Recipe
-//    
-//}
 
 

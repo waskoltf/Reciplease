@@ -116,7 +116,6 @@ struct ListRecipe: View {
     }
     func getRecipeDetails() {
         searchRecipeDetails.getRecipe {
-            // Handle completion if needed
         }
     }
     
