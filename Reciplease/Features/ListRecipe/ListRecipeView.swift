@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct ListRecipe: View {
-    @ObservedObject var searchRecipe = SearchRecipe()
-    @ObservedObject var searchRecipeDetails = SearchRecipeDetails()
-    @EnvironmentObject var searchRecipeView: searchRecipeView
+struct ListRecipeView: View {
+    
+    @ObservedObject var viewModel = ListRecipeViewModel()
+    @ObservedObject var viewModelDetails = DetailsRecipeViewModel()
+    @EnvironmentObject var searchRecipeView: searchRecipeViewModel
     
     @State private var selectedRecipe: Recipe?
     @State private var isShowingDetails = false
@@ -24,7 +25,7 @@ struct ListRecipe: View {
                 .ignoresSafeArea(.all)
             
             ScrollView{
-                ForEach(searchRecipe.recipes) { recipe in
+                ForEach(viewModel.recipes) { recipe in
                     
                     VStack(spacing: 15){
                   
@@ -34,7 +35,7 @@ struct ListRecipe: View {
                             Button(action: {
                                 selectedRecipe = recipe
                                 isShowingDetails.toggle()
-                                getRecipeDetails()
+                                viewModelDetails.fetchRecipe()
                             }) {
                                 if let imageURL = URL(string: recipe.image) {
                                     AsyncImage(url: imageURL) { phase in
@@ -100,7 +101,7 @@ struct ListRecipe: View {
                 //            let query = searchRecipeView.ingredients.joined(separator: ",")
                 let query = "pasta,cheese"
                 print(query)
-                searchRecipe.searchRecipes(query: query)
+                viewModel.searchRecipes(query: query)
                 debugPrint()
                 
             }
@@ -109,13 +110,6 @@ struct ListRecipe: View {
                     DetailsRecipeView(recipe: selectedRecipe)
                 }
             }
-        }
-        
-        
-        
-    }
-    func getRecipeDetails() {
-        searchRecipeDetails.getRecipe {
         }
     }
     
@@ -132,7 +126,7 @@ struct ListRecipe: View {
     }
 
 }
-
-#Preview {
-    ListRecipe()
-}
+//
+//#Preview {
+////    ListRecipe()
+//}

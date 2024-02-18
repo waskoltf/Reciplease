@@ -1,18 +1,14 @@
 import SwiftUI
 import Alamofire
 
-class searchRecipeView :ObservableObject{
-    @Published  var textInput: String = ""
-    @Published  var ingredients: [String] = []
-}
 
 
 
 struct SearchView: View {
     
     @State private var OpenSheet = false
-    @ObservedObject  var searchRecipe = SearchRecipe()
-    @EnvironmentObject var searchRecipeView : searchRecipeView
+//    @ObservedObject  var searchRecipe = SearchRecipe()   
+    @EnvironmentObject var searchRecipeViewModel : searchRecipeViewModel
     var body: some View {
         ZStack {
             Color(.brown)
@@ -29,15 +25,15 @@ struct SearchView: View {
                     .font(.custom("American Typewriter", size: 25))
                 
                 HStack {
-                    TextField("Lemon, cheese, sausages", text: $searchRecipeView.textInput)
+                    TextField("Lemon, cheese, sausages", text: $searchRecipeViewModel.textInput)
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Button(action: {
                         // Ajouter l'ingrédient à la liste
-                        if !searchRecipeView.textInput.isEmpty {
-                              searchRecipeView.ingredients.append(searchRecipeView.textInput)
-                              searchRecipeView.textInput = "" // Effacer la saisie après l'ajout
+                        if !searchRecipeViewModel.textInput.isEmpty {
+                            searchRecipeViewModel.ingredients.append(searchRecipeViewModel.textInput)
+                            searchRecipeViewModel.textInput = "" // Effacer la saisie après l'ajout
                             OpenSheet = false
                           }
 //                        searchRecipeView.ingredients.append(searchRecipeView.textInput)
@@ -64,7 +60,7 @@ struct SearchView: View {
                     
                     Button(action: {
                         // Effacer la liste des ingrédients
-                        searchRecipeView.ingredients.removeAll()
+                        searchRecipeViewModel.ingredients.removeAll()
                     }) {
                         Text("Clear")
                             .foregroundColor(.white)
@@ -80,7 +76,7 @@ struct SearchView: View {
                 
                 // Afficher les ingrédients dynamiquement
                 VStack(alignment: .leading, spacing: 30) {
-                    ForEach(searchRecipeView.ingredients, id: \.self) { ingredient in
+                    ForEach(searchRecipeViewModel.ingredients, id: \.self) { ingredient in
                         HStack {
                             Text("- \(ingredient)")
                                 .font(.custom("American Typewriter", size: 20))
@@ -105,9 +101,11 @@ struct SearchView: View {
                    
 
 
-//                    let query = ingredients.joined(separator: ",")
+//                    let query = searchRecipeViewModel.ingredients.joined(separator: ",")
 //                    print(query)
 //                                       searchRecipe.searchRecipes(query: query)
+                    
+                    
                     print("Search button tapped")
                 }) {
                     Text("Search for recipe")
@@ -134,7 +132,8 @@ struct SearchView: View {
 
         }
         .sheet(isPresented: $OpenSheet){
-            ListRecipe()
+//            ListRecipe()
+            ListRecipeView()
         }
     }
 }

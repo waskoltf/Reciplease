@@ -9,8 +9,9 @@ import SwiftUI
 import CoreData
 @main
 struct RecipleaseApp: App {
-    @StateObject private var SearchRecipeView = searchRecipeView()
-    @StateObject private var SearchRecipeViewDetail = searchRecipeView()
+    @StateObject private var SearchRecipeView = searchRecipeViewModel()
+    @StateObject private var SearchRecipeViewDetail = searchRecipeViewModel()
+    
     let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
