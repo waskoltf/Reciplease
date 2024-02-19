@@ -11,8 +11,9 @@ import CoreData
 struct DetailsRecipeView: View {
     @Environment(\.managedObjectContext) private var viewContext
     var recipe: Recipe
-    @State private var isFavorite: Bool = false 
-    
+    @StateObject private var favoriteViewModel = FavoriteViewModel() // Créez une instance de votre ViewModel
+
+    @State private var isFavorite: Bool = false
     
     var body: some View {
         ScrollView{
@@ -25,36 +26,26 @@ struct DetailsRecipeView: View {
                         .foregroundColor(.black)
                         .bold()
                     Spacer()
-                    // Utilisation de isFavorite pour afficher une étoile pleine ou vide
-                                       Button(action: {
-                                           if isFavorite {
-                                               removeFromFavorites()
-                                           } else {
-                                               saveToCoreData()
-                                           }
-                                           isFavorite.toggle() // Bascule de l'état isFavorite
-                                       }) {
-                                           Image(systemName: isFavorite ? "star.fill" : "star")
-                                                         .resizable()
-                                                         .frame(width: 25, height: 25)
-                                                         .foregroundColor(isFavorite ? .yellow : .gray)
-                                       }                }
+                    Button(action: {
+                        isFavorite = favoriteViewModel.toggleFavorite(recipe: recipe)
+                    }) {
+                        Image(systemName: isFavorite ? "star.fill" : "star")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(isFavorite ? .yellow : .gray)
+                    }
+
+                }
                 .frame(width: UIScreen.main.bounds.width * 0.85)
-            
                 Spacer()
-                
                 Text("Nom: \(recipe.label)")
                     .font(.custom("American Typewriter", size: 20))
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.black)
                     .fontWeight(.semibold)
-                
                 Text("Temps de préparation: \(formattedTime)")
                     .fontWeight(.semibold)
-                
-                // Afficher les ingrédients
                 if !recipe.ingredients.isEmpty {
-                    
                     Text("Ingrédients:")
                         .multilineTextAlignment(.leading)
                         .font(.custom("American Typewriter", size: 25))
@@ -72,11 +63,7 @@ struct DetailsRecipeView: View {
                 } else {
                     Text("Aucun ingrédient disponible")
                 }
-                //            Text("Label: \(recipe.image)")
                 HStack {
-                    // MARK: - IMAGE
-                    // Utilisez une URL pour charger l'image depuis le lien fourni dans les données de recette
-                    
                     if let imageURL = URL(string: recipe.image) {
                         AsyncImage(url: imageURL) { phase in
                             switch phase {
@@ -105,82 +92,14 @@ struct DetailsRecipeView: View {
                 .background(.white)
                 .clipped()
             }
-//            .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.height * 0.8)
-//            .background(.red)
         }
         .onAppear {
-            // Vérifier si la recette est dans les favoris lors de l'apparition de la vue
-            isFavorite = isRecipeFavorite()
-        }
-
-       
-    }
-    func saveToCoreData() {
-        // Vérifiez d'abord si la recette existe déjà en favori
-        if fetchFavoriteRecipe() == nil {
-            // Si la recette n'existe pas, ajoutez-la à CoreData
-            let favoriteRecipe = FavoriteRecipe(context: viewContext)
-            favoriteRecipe.id = UUID()
-            favoriteRecipe.label = recipe.label
-            favoriteRecipe.image = recipe.image
-            favoriteRecipe.ingredients = recipe.ingredients.map { $0.text }.joined(separator: ", ")
-            favoriteRecipe.url = recipe.url
-            favoriteRecipe.totalTime = recipe.totalTime
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        } else {
-            // Si la recette existe déjà en favori, vous pouvez gérer cette situation comme vous le souhaitez.
-            // Vous pouvez afficher une alerte à l'utilisateur ou effectuer une autre action.
-            print("La recette est déjà en favori.")
+            // Chargez les recettes favorites lors de l'apparition de la vue
+            favoriteViewModel.fetchFavoriteRecipes()
+            // Vérifiez si la recette actuelle est dans les favoris
+            isFavorite = favoriteViewModel.isRecipeFavorite(recipe: recipe)
         }
     }
-    
-    func toggleFavorite() {
-        if isFavorite {
-            removeFromFavorites()
-        } else {
-            saveToCoreData()
-        }
-        isFavorite.toggle()
-    }
-
-    func isRecipeFavorite() -> Bool {
-        return fetchFavoriteRecipe() != nil
-    }
-
-
-    
-    func removeFromFavorites() {
-           // Implémentez le code pour supprimer la recette des favoris
-           // Utilisez une requête fetch pour trouver la recette dans CoreData
-           // Et ensuite la supprimer du contexte géré
-           if let existingFavorite = fetchFavoriteRecipe() {
-               viewContext.delete(existingFavorite)
-               do {
-                   try viewContext.save()
-               } catch {
-                   let nsError = error as NSError
-                   fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-               }
-           }
-       }
-
-       func fetchFavoriteRecipe() -> FavoriteRecipe? {
-           let fetchRequest: NSFetchRequest<FavoriteRecipe> = FavoriteRecipe.fetchRequest()
-           fetchRequest.predicate = NSPredicate(format: "label == %@", recipe.label)
-           do {
-               let favorites = try viewContext.fetch(fetchRequest)
-               return favorites.first
-           } catch {
-               let nsError = error as NSError
-               fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-           }
-       }
 
 
     var formattedTime: String {

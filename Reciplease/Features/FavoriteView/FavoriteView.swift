@@ -1,7 +1,6 @@
-// FavoriteView.swift
-
 import SwiftUI
 import CoreData
+
 struct FavoriteView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
@@ -9,8 +8,8 @@ struct FavoriteView: View {
         animation: .default
     ) private var favoriteRecipes: FetchedResults<FavoriteRecipe>
 
-    @ObservedObject var viewModel : FavoriteViewModel 
-    
+    @ObservedObject var viewModel = FavoriteViewModel() // Modification ici
+
     var body: some View {
         NavigationView {
             if favoriteRecipes.isEmpty {
@@ -61,17 +60,14 @@ struct FavoriteView: View {
                         .background(Color("YellowSecondColor"))
                         .cornerRadius(8)
                     }
-//                    .onDelete(perform: viewModel.deleteFavorite)
+                    .onDelete { indexSet in
+                            viewModel.deleteFavorite(offsets: indexSet)
+                        }
+                    
                 }
+                
                 .navigationBarTitle("Favorites")
             }
         }
-       
     }
-
- 
 }
-
-//#Preview {
-//    FavoriteView()
-//}
